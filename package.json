@@ -1,0 +1,60 @@
+{
+  "name": "@ground-zero-llc/gz-context-engine",
+  "version": "0.1.0",
+  "description": "Production-grade context engine for AI agents — hybrid RAG, reranking, token-aware assembly, MCP server, eval harness.",
+  "author": "Ground Zero LLC <hello@ground-zero.dev>",
+  "publisher": "Ground Zero LLC",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "gz-context": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "cli": "tsx src/cli.ts"
+  },
+  "keywords": [
+    "rag",
+    "context-engine",
+    "ai",
+    "llm",
+    "retrieval",
+    "embeddings",
+    "vector-search",
+    "mcp",
+    "ground-zero-llc"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "better-sqlite3": "^13.0.3",
+    "commander": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.0",
+    "@types/node": "^22.0.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oke3/gz-context-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oke3/gz-context-engine/issues"
+  },
+  "homepage": "https://github.com/oke3/gz-context-engine#readme"
+}
