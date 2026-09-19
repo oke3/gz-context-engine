@@ -4,8 +4,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Ground Zero LLC](https://img.shields.io/badge/Built%20by-Ground%20Zero%20LLC-purple)](https://github.com/oke3)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?logo=typescript)](https://typescriptlang.org)
-[![Bun](https://img.shields.io/badge/Runtime-Bun-000?logo=bun)](https://bun.sh)
+[![npm](https://img.shields.io/npm/v/@ground-zero-llc/gz-context-engine)](https://www.npmjs.com/package/@ground-zero-llc/gz-context-engine)
+[![CI](https://github.com/oke3/gz-context-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/oke3/gz-context-engine/actions)
 
 ---
 
@@ -81,6 +81,7 @@ gz-context status
 Combines sparse (BM25/FTS5) and dense (embedding cosine) retrieval, then merges via **Reciprocal Rank Fusion** with configurable `k`. Handles both semantic and keyword-critical queries.
 
 ```ts
+// Copyright (c) 2026 Ground Zero LLC.
 const results = await engine.search("vector database performance", {
   method: 'hybrid',  // or 'dense' | 'bm25'
   topK: 10,
@@ -92,6 +93,7 @@ const results = await engine.search("vector database performance", {
 Pluggable `RerankerProvider` interface — swap in any cross-encoder (Cohere, custom ONNX, etc.) to re-score top-N candidates before context assembly.
 
 ```ts
+// Copyright (c) 2026 Ground Zero LLC.
 interface RerankerProvider {
   name: string
   rerank(query: string, documents: string[], topK: number): Promise<number[]>
@@ -120,6 +122,7 @@ Three strategies out of the box:
 `retrieve()` returns `ContextItem[]` with pre-computed `tokenCount` values. Build prompts that stay within model limits without hard-coding counts.
 
 ```ts
+// Copyright (c) 2026 Ground Zero LLC.
 const context = await engine.retrieve("How does RRF work?", { topK: 5 })
 
 // context[0] = {
@@ -136,6 +139,7 @@ const context = await engine.retrieve("How does RRF work?", { topK: 5 })
 Pluggable `GenerationProvider` interface. Ships with OpenAI-compatible; swap in Anthropic, local models, or any HTTP endpoint.
 
 ```ts
+// Copyright (c) 2026 Ground Zero LLC.
 const response = await engine.query({
   query: "Explain the RRF algorithm",
   context: [],          // auto-retrieves if empty
@@ -178,6 +182,7 @@ gz-context mcp
 Measure what matters. The eval suite computes **Precision@K**, **Recall@K**, **Faithfulness**, **Relevance**, plus p50/p99 latency and cost per run.
 
 ```ts
+// Copyright (c) 2026 Ground Zero LLC.
 import { EvalSuite } from '@ground-zero-llc/gz-context-engine'
 
 const suite = new EvalSuite(engine)
@@ -278,6 +283,7 @@ Config resolution order: **defaults ← `~/.gz-context/config.json` ← override
 ## API Reference
 
 ```ts
+// Copyright (c) 2026 Ground Zero LLC.
 import { ContextEngine, buildConfig } from '@ground-zero-llc/gz-context-engine'
 
 // Create with defaults
@@ -333,6 +339,7 @@ Where `k` (default: 60) controls how much rank position matters. Lower `k` = mor
 `retrieve()` wraps search results into `ContextItem` objects with source attribution, citation strings, and pre-computed token counts. This makes it trivial to stay within model token budgets:
 
 ```ts
+// Copyright (c) 2026 Ground Zero LLC.
 const context = await engine.retrieve(query, { topK: 5 })
 const totalTokens = context.reduce((sum, c) => sum + c.tokenCount, 0)
 // Fit into your prompt template with confidence
@@ -383,6 +390,7 @@ gz-context eval ./eval-suites/full.json --json -c 10
 ### Running from Code
 
 ```ts
+// Copyright (c) 2026 Ground Zero LLC.
 import { EvalSuite } from '@ground-zero-llc/gz-context-engine'
 
 const suite = new EvalSuite(engine)
@@ -436,4 +444,4 @@ MIT — Ground Zero LLC
 
 ---
 
-Built by [Ground Zero LLC](https://github.com/oke3) — AI agent consulting, web development, content production.
+Built by [Ground Zero LLC](https://github.com/oke3) — AI infrastructure for the agentic age.
