@@ -445,6 +445,9 @@ bun run test
 | [gz-codemap](https://github.com/oke3/gz-codemap) | Scan codebases → auto-generate project config |
 | [gz-modelrouter](https://github.com/oke3/gz-modelrouter) | Intelligent LLM cost router — save 40-70% on bills |
 | [gz-gateway](https://github.com/oke3/gz-gateway) | OpenAI-compatible AI gateway — rate limiting, caching, failover, cost tracking |
+| [gz-agent](https://github.com/oke3/gz-agent) | Production-grade agent runtime — tool calling, state machines, multi-agent coordination |
+| [gz-eval](https://github.com/oke3/gz-eval) | Evaluation framework — golden test sets, quality scoring, A/B comparison |
+| [gz-guardrails](https://github.com/oke3/gz-guardrails) | AI safety middleware — PII detection, prompt injection defense, content moderation |
 | [gz-sessions](https://github.com/oke3/gz-sessions) | Persistent cross-session memory for AI agents |
 | [gz-sessionrecall](https://github.com/oke3/gz-sessionrecall) | AI code archaeology — search your session history |
 | [gz-bench](https://github.com/oke3/gz-bench) | Standardized benchmark harness for AI coding agents |
