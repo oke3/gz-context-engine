@@ -438,6 +438,18 @@ bun run lint
 bun run test
 ```
 
+## Related Projects
+
+| Project | What It Does |
+|---------|-------------|
+| [gz-codemap](https://github.com/oke3/gz-codemap) | Scan codebases → auto-generate project config |
+| [gz-modelrouter](https://github.com/oke3/gz-modelrouter) | Intelligent LLM cost router — save 40-70% on bills |
+| [gz-sessions](https://github.com/oke3/gz-sessions) | Persistent cross-session memory for AI agents |
+| [gz-sessionrecall](https://github.com/oke3/gz-sessionrecall) | AI code archaeology — search your session history |
+| [gz-bench](https://github.com/oke3/gz-bench) | Standardized benchmark harness for AI coding agents |
+| [gz-authmesh](https://github.com/oke3/gz-authmesh) | Unified credential mesh for AI providers |
+| [gz-remote](https://github.com/oke3/gz-remote) | Drive AI coding agents on remote machines over SSH |
+
 ---
 
 ## Enterprise Support
